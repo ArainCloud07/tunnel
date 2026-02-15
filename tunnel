@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ================= CONFIG =================
-REMOTE_HOST="tunnel.arain.cloud"
+REMOTE_HOST="86.96.192.78"
 REMOTE_USER="root"
 SSH_PORT="65535"
 
