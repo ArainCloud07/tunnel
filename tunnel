@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ================= CONFIG =================
-REMOTE_HOST="52.66.239.77"
+REMOTE_HOST="13.201.130.42"
 REMOTE_USER="root"
 SSH_PORT="65535"
 
