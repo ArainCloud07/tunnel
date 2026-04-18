@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# ================= CONFIG =================
 REMOTE_HOST="13.201.130.42"
 REMOTE_USER="root"
-SSH_PORT="65535"
+
+
+SSH_PORT_B64="NjU1MzUK"
+SSH_PORT=$(echo "$SSH_PORT_B64" | base64 -d)
 
 SERVICE_DIR="/etc/systemd/system"
 
-# ================= COLORS =================
+
 C_RESET='\033[0m'
 C_RED='\033[0;31m'
 C_GREEN='\033[0;32m'
@@ -16,9 +18,9 @@ C_BLUE='\033[0;34m'
 C_CYAN='\033[0;36m'
 C_WHITE='\033[1;37m'
 
-# ================= USAGE =================
+
 usage() {
-    echo -e "${C_WHITE}ArainCloud Tunnel Manager (MULTI)${C_RESET}"
+    echo -e "${C_WHITE}Shubham Tunnel Manager (MULTI)${C_RESET}"
     echo "------------------------------------------------"
     echo -e "${C_YELLOW}Usage:${C_RESET} tunnel <command>\n"
 
@@ -39,7 +41,7 @@ usage() {
     echo "------------------------------------------------"
 }
 
-# ================= ROOT CHECK =================
+
 if [[ $EUID -ne 0 ]]; then
     echo -e "${C_RED}Run as root${C_RESET}"
     exit 1
@@ -47,7 +49,7 @@ fi
 
 [ -z "$1" ] && usage && exit 0
 
-# ================= COMMANDS =================
+
 case "$1" in
 
 make)
